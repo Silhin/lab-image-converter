@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.silhin.imageconverter.controllers.MainScreenController">
+    <MenuBar VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="Файл">
+            <MenuItem mnemonicParsing="false" text="Открыть" onAction="#openFile"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Преобразование">
+            <MenuItem mnemonicParsing="false" text="Негатив" onAction="#negative"/>
+            <MenuItem mnemonicParsing="false" text="Гамма-коррекция" onAction="#gammaCorrection"/>
+            <Menu mnemonicParsing="false" text="Повышение резкости">
+                <MenuItem mnemonicParsing="false" text="Оператор Собела" onAction="#operatorSobel"/>
+                <MenuItem mnemonicParsing="false" text="Оператор Робертса" onAction="#operatorRobertsa"/>
+                <MenuItem mnemonicParsing="false" text="Лапласиан" onAction="#laplasian"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Гистограмма">
+                <MenuItem mnemonicParsing="false" text="Эквализация гистограммы" onAction="#equalization"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Фильтр">
+                <MenuItem mnemonicParsing="false" text="Пороговый фильтр" onAction="#threshold"/>
+                <MenuItem mnemonicParsing="false" text="Линейный фильтр" onAction="#linear"/>
+                <MenuItem mnemonicParsing="false" text="Медианный фильтр" onAction="#median"/>
+            </Menu>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Настройки">
+            <MenuItem mnemonicParsing="false" text="Информация" onAction="#information"/>
+            <MenuItem mnemonicParsing="false" text="Гамма-коррекция" onAction="#gammaConfig"/>
+            <MenuItem mnemonicParsing="false" text="Пороговая обработка" onAction="#thresholdConfig"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <Label layoutX="82.0" layoutY="327.0" text="Исходное изображение"/>
+        <ImageView fx:id="originalImage" fitHeight="304.0" fitWidth="269.0" layoutX="14.0" layoutY="14.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label layoutX="431.0" layoutY="327.0" text="Преобразованное"/>
+        <ImageView fx:id="convertedImage" fitHeight="313.0" fitWidth="269.0" layoutX="347.0" layoutY="14.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+    </AnchorPane>
+</VBox>

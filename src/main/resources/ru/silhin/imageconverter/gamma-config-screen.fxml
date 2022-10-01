@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="205.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.silhin.imageconverter.controllers.GammaConfigController">
+    <AnchorPane prefHeight="228.0" prefWidth="278.0" VBox.vgrow="ALWAYS">
+        <Button layoutX="139.0" layoutY="166.0" mnemonicParsing="false" onAction="#setConfig" text="Установить значения"/>
+        <Label layoutX="89.0" layoutY="14.0" text="Настройка: Гамма-коррекция"/>
+        <Label layoutX="24.0" layoutY="69.0" text="Гамма c"/>
+        <Label layoutX="24.0" layoutY="119.0" text="Гамма y"/>
+        <TextField layoutX="91.0" layoutY="65.0" prefHeight="26.0" prefWidth="183.0" fx:id="gammaCField"/>
+        <TextField layoutX="91.0" layoutY="115.0" prefHeight="26.0" prefWidth="183.0" fx:id="gammaYField"/>
+    </AnchorPane>
+</VBox>
