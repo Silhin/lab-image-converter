@@ -8,11 +8,8 @@ import javafx.stage.Stage;
 import ru.silhin.imageconverter.MainApplication;
 
 public class GammaConfigController {
-    @FXML
-    private TextField gammaCField;
-
-    @FXML
-    private TextField gammaYField;
+    @FXML private TextField gammaCField;
+    @FXML private TextField gammaYField;
 
     public void setConfig(ActionEvent event) {
         if (!gammaCField.getText().isEmpty()) {

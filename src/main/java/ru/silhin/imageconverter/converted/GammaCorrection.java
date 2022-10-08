@@ -8,15 +8,9 @@ import static ru.silhin.imageconverter.MainApplication.GAMMA_C;
 import static ru.silhin.imageconverter.MainApplication.GAMMA_Y;
 
 public class GammaCorrection implements IConvertingProcess {
-    private final System.Logger logger = System.getLogger(this.getClass().getName());
-
     @Override
     public Image converting(Image originalImage) {
-        logger.log(System.Logger.Level.INFO, "gammaC: " + GAMMA_C);
-        logger.log(System.Logger.Level.INFO, "gammaY: " + GAMMA_Y);
-
         WritableImage out = new WritableImage((int) originalImage.getWidth(), (int) originalImage.getHeight());
-
         for (int y = 0; y < (int) originalImage.getHeight(); ++y) {
             for (int x = 0; x < originalImage.getWidth(); ++x) {
                 Color originalColor = originalImage.getPixelReader().getColor(x, y);

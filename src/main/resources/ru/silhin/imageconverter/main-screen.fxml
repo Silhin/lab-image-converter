@@ -12,6 +12,7 @@
     <MenuBar VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="Файл">
             <MenuItem mnemonicParsing="false" text="Открыть" onAction="#openFile"/>
+            <MenuItem mnemonicParsing="false" text="Сохранить" onAction="#saveFile"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Преобразование">
             <MenuItem mnemonicParsing="false" text="Негатив" onAction="#negative"/>
@@ -29,11 +30,18 @@
                 <MenuItem mnemonicParsing="false" text="Линейный фильтр" onAction="#linear"/>
                 <MenuItem mnemonicParsing="false" text="Медианный фильтр" onAction="#median"/>
             </Menu>
+            <Menu mnemonicParsing="false" text="Морфологический фильтр">
+                <MenuItem mnemonicParsing="false" text="Дилатация" onAction="#dilation"/>
+                <MenuItem mnemonicParsing="false" text="Эрозия" onAction="#erosion"/>
+                <MenuItem mnemonicParsing="false" text="Выделения границ" onAction="#border"/>
+            </Menu>
         </Menu>
         <Menu mnemonicParsing="false" text="Настройки">
             <MenuItem mnemonicParsing="false" text="Информация" onAction="#information"/>
             <MenuItem mnemonicParsing="false" text="Гамма-коррекция" onAction="#gammaConfig"/>
             <MenuItem mnemonicParsing="false" text="Пороговая обработка" onAction="#thresholdConfig"/>
+            <MenuItem mnemonicParsing="false" text="Линейный фильтр" onAction="#linearConfig"/>
+            <MenuItem mnemonicParsing="false" text="Медианный фильтр" onAction="#medianConfig"/>
         </Menu>
     </MenuBar>
     <AnchorPane VBox.vgrow="ALWAYS">
