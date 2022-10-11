@@ -1,6 +1,5 @@
-package ru.silhin.imageconverter.controllers;
+package ru.silhin.imageconverter.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,17 +10,17 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.commons.io.FilenameUtils;
 import ru.silhin.imageconverter.MainApplication;
-import ru.silhin.imageconverter.converted.Equalization;
-import ru.silhin.imageconverter.converted.GammaCorrection;
-import ru.silhin.imageconverter.converted.IConvertingProcess;
-import ru.silhin.imageconverter.converted.Laplasian;
-import ru.silhin.imageconverter.converted.LinearFilter;
-import ru.silhin.imageconverter.converted.MedianFilter;
-import ru.silhin.imageconverter.converted.MorphologicalFilter;
-import ru.silhin.imageconverter.converted.NegativeConverting;
-import ru.silhin.imageconverter.converted.OperatorRobertsa;
-import ru.silhin.imageconverter.converted.OperatorSobel;
-import ru.silhin.imageconverter.converted.ThresholdProcessing;
+import ru.silhin.imageconverter.filter.lab5.Equalization;
+import ru.silhin.imageconverter.filter.lab2.GammaFilter;
+import ru.silhin.imageconverter.filter.IFilter;
+import ru.silhin.imageconverter.filter.lab4.LaplasianFilter;
+import ru.silhin.imageconverter.filter.lab7.LinearFilter;
+import ru.silhin.imageconverter.filter.lab7.MedianFilter;
+import ru.silhin.imageconverter.filter.lab8.MorphologicalFilter;
+import ru.silhin.imageconverter.filter.lab1.NegativeFilter;
+import ru.silhin.imageconverter.filter.lab3.RobertsFilter;
+import ru.silhin.imageconverter.filter.lab3.SobelFilter;
+import ru.silhin.imageconverter.filter.lab6.ThresholdFilter;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -80,23 +79,23 @@ public class MainScreenController implements Initializable {
     }
 
     public void negative() {
-        this.converting(new NegativeConverting());
+        this.converting(new NegativeFilter());
     }
 
     public void gammaCorrection() {
-        this.converting(new GammaCorrection());
+        this.converting(new GammaFilter());
     }
 
     public void operatorSobel() {
-        this.converting(new OperatorSobel());
+        this.converting(new SobelFilter());
     }
 
     public void operatorRobertsa() {
-        this.converting(new OperatorRobertsa());
+        this.converting(new RobertsFilter());
     }
 
     public void laplasian() {
-        this.converting(new Laplasian());
+        this.converting(new LaplasianFilter());
     }
 
     public void equalization() {
@@ -104,7 +103,7 @@ public class MainScreenController implements Initializable {
     }
 
     public void threshold() {
-        this.converting(new ThresholdProcessing());
+        this.converting(new ThresholdFilter());
     }
 
     public void linear() {
@@ -127,29 +126,22 @@ public class MainScreenController implements Initializable {
         this.converting(new MorphologicalFilter.BorderFilter());
     }
 
-    private void converting(IConvertingProcess converting) {
-        if (converting != null) {
-            CONVERTER = converting;
+    private void converting(IFilter filter) {
+        if (filter != null) {
+            CONVERTER = filter;
         }
         if (originalImage.getImage() != null && CONVERTER != null) {
-            convertedImage.setImage(CONVERTER.converting(originalImage.getImage()));
+            convertedImage.setImage(CONVERTER.useFilter(originalImage.getImage()));
         }
     }
 
-    private void openNewScreen(String path, IConvertingProcess converter) {
+    private void openNewScreen(String path, IFilter converter) {
         try {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(path));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Silhin Lab!");
-
-            if(converter != null) {
-                stage.setOnCloseRequest(windowEvent -> {
-                    CONVERTER = converter;
-                    this.converting(CONVERTER);
-                });
-            }
-
+            stage.setOnCloseRequest(windowEvent -> this.converting(converter));
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -162,11 +154,11 @@ public class MainScreenController implements Initializable {
     }
 
     public void thresholdConfig() {
-        this.openNewScreen("threshold-config-screen.fxml", new ThresholdProcessing());
+        this.openNewScreen("threshold-config-screen.fxml", new ThresholdFilter());
     }
 
     public void gammaConfig() {
-        this.openNewScreen("gamma-config-screen.fxml", new GammaCorrection());
+        this.openNewScreen("gamma-config-screen.fxml", new GammaFilter());
     }
 
     public void linearConfig() {

@@ -6,13 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="205.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="ru.silhin.imageconverter.controllers.MedianConfigController">
+<VBox prefHeight="205.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.silhin.imageconverter.controller.config.MedianConfigController">
     <AnchorPane prefHeight="228.0" prefWidth="278.0" VBox.vgrow="ALWAYS">
-        <Button layoutX="139.0" layoutY="166.0" mnemonicParsing="false" onAction="#setConfig" text="Установить значения"/>
-        <Label layoutX="89.0" layoutY="14.0" text="Настройка: Медианный фильтр"/>
-        <Label layoutX="89.0" layoutY="19.0" fx:id="errorMsg"/>
-        <Label layoutX="24.0" layoutY="69.0" text="R = "/>
-        <TextField layoutX="91.0" layoutY="65.0" prefHeight="26.0" prefWidth="183.0" fx:id="RField"/>
+        <Button layoutX="99.0" layoutY="152.0" mnemonicParsing="false" onAction="#setConfig" text="Установить значения" />
+        <Label layoutX="78.0" layoutY="14.0" text="Настройка: Медианный фильтр" />
+        <Label fx:id="errorMsg" layoutX="68.0" layoutY="54.0"/>
+        <Label layoutX="67.0" layoutY="94.0" text="R = " />
+        <TextField fx:id="RField" layoutX="89.0" layoutY="89.0" prefHeight="26.0" prefWidth="183.0" />
     </AnchorPane>
 </VBox>

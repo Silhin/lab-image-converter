@@ -4,19 +4,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.silhin.imageconverter.converted.IConvertingProcess;
-import ru.silhin.imageconverter.converted.NegativeConverting;
+import ru.silhin.imageconverter.filter.IFilter;
+import ru.silhin.imageconverter.filter.lab1.NegativeFilter;
 
 import java.io.IOException;
 
 public final class MainApplication extends Application {
-    public static double GAMMA_C = 1D;
-    public static double GAMMA_Y = 1.5D;
-
-    public static double Rl = 0;
-    public static double Ru = 1;
-
-    public static IConvertingProcess CONVERTER = new NegativeConverting();
+    public static IFilter CONVERTER = new NegativeFilter();
 
     @Override
     public void start(Stage stage) throws IOException {
