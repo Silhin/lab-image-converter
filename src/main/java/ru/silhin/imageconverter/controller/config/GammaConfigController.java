@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import ru.silhin.imageconverter.filter.lab2.GammaFilter;
+import ru.silhin.imageconverter.filter.GammaFilter;
 
 public class GammaConfigController {
     @FXML public Label errorMsg;

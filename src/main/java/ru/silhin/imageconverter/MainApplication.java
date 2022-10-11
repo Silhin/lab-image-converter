@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ru.silhin.imageconverter.filter.IFilter;
-import ru.silhin.imageconverter.filter.lab1.NegativeFilter;
+import ru.silhin.imageconverter.filter.NegativeFilter;
 
 import java.io.IOException;
 

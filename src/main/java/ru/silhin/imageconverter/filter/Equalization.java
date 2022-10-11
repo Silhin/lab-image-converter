@@ -1,9 +1,8 @@
-package ru.silhin.imageconverter.filter.lab5;
+package ru.silhin.imageconverter.filter;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
-import ru.silhin.imageconverter.filter.IFilter;
 import ru.silhin.imageconverter.util.FilterHelper;
 
 import java.util.HashMap;

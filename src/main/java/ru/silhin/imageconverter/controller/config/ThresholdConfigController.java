@@ -8,8 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import ru.silhin.imageconverter.MainApplication;
-import ru.silhin.imageconverter.filter.lab6.ThresholdFilter;
+import ru.silhin.imageconverter.filter.ThresholdFilter;
 
 public class ThresholdConfigController {
     @FXML public TextField RlField;

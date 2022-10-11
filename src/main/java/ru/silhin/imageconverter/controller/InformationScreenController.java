@@ -3,11 +3,10 @@ package ru.silhin.imageconverter.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import ru.silhin.imageconverter.MainApplication;
-import ru.silhin.imageconverter.filter.lab2.GammaFilter;
-import ru.silhin.imageconverter.filter.lab6.ThresholdFilter;
-import ru.silhin.imageconverter.filter.lab7.LinearFilter;
-import ru.silhin.imageconverter.filter.lab7.MedianFilter;
+import ru.silhin.imageconverter.filter.GammaFilter;
+import ru.silhin.imageconverter.filter.ThresholdFilter;
+import ru.silhin.imageconverter.filter.LinearFilter;
+import ru.silhin.imageconverter.filter.MedianFilter;
 
 import java.net.URL;
 import java.util.ResourceBundle;

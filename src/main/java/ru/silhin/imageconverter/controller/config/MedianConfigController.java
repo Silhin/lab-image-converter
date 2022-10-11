@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import ru.silhin.imageconverter.filter.lab7.MedianFilter;
+import ru.silhin.imageconverter.filter.MedianFilter;
 
 public class MedianConfigController {
     @FXML public Label errorMsg;

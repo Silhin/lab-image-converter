@@ -1,8 +1,7 @@
-package ru.silhin.imageconverter.filter.lab3;
+package ru.silhin.imageconverter.filter;
 
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import ru.silhin.imageconverter.filter.IFilter;
 import ru.silhin.imageconverter.util.FilterHelper;
 
 public class SobelFilter implements IFilter {

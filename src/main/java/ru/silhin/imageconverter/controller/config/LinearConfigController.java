@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import ru.silhin.imageconverter.filter.lab7.LinearFilter;
+import ru.silhin.imageconverter.filter.LinearFilter;
 
 public class LinearConfigController {
     @FXML public Label errorMsg;
